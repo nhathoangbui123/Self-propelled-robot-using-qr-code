@@ -1,0 +1,442 @@
+/*==================== GOOGLE FONTS ====================*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+/*==================== VARIABLES CSS ====================*/
+:root {
+    --header-height: 3rem;
+
+    /*========== Colors ==========*/
+    /* Change favorite color */
+    --hue-color: 180; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
+    /* HSL color mode */
+    --first-color: hsl(var(--hue-color), 65%, 80%);
+    --first-color-second:hsl(var(--hue-color), 69%, 61%) ;
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter:hsl(var(--hue-color), 92%, 85%) ;
+    --title-color:hsl(var(--hue-color), 8%, 15%) ;
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color:hsl(var(--hue-color), 70%, 96%) ;
+    --body-color: hsl(var(--hue-color), 38%, 12%);
+    /* --container-color:#FFF ; */
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+
+    /*========== Font and typography ==========*/
+    --body-font:'Poppins', sans-serif;
+
+    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== Margenes Bottom ==========*/
+    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+    --mb-0-25: .25rem;
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 100;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0 0 var(--header-height) 0;
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: hsl(186, 38%, 12%);
+    color: var(--text-color);
+}
+h1,h2,h3,h4{
+    color: var(--title-color);
+    font-weight: var(--font-semi-bold);
+}
+
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+/*==================== BUTTONS ====================*/
+.button{
+    display: inline-block;
+    background-color: var(--first-color);
+    color: #FFF;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: var(--font-medium);
+}
+.button:hover{
+    background-color: var(--first-color-alt);
+}
+.button__icon{
+    font-size: 1.25rem;
+    margin-left: var(--mb-0-5);
+    transition: .3s;
+}
+.button--flex{
+    display: inline-flex;
+    align-items: center;
+}
+/*==================== REUSABLE CSS CLASSES ====================*/
+.section{
+    padding: 2rem 0 4rem;
+}
+.section__title{
+    font-size: var(--h1-font-size);
+}
+.section__subtitle{
+    display: block;
+    font-size: var(--small-font-size);
+    margin-bottom: var(--mb-3);
+}
+.section__title,
+.section__subtitle{
+    text-align: center;
+}
+/*==================== LAYOUT ====================*/
+.header{
+    opacity: 80%;
+    width: 100%;
+    /* position: fixed; */
+    bottom:0;
+    left: 0;
+    z-index: var(--z-fixed);
+    /*background-color: var(--first-color);*/
+    
+}
+/*==================== NAVIGATION ====================*/
+.header>.navbar{
+    /* background-color: var(--first-color) !important; */
+	height: 70px;
+	/* opacity: 0.85; */
+    background-image: url("/asset/img/bg_header1.jpg");
+}
+.header-icon{
+    width: 80px;
+    margin-bottom: 1rem;
+}
+.header>.navbar a{
+    font-size: var(--h1-font-size);
+    color: #696969!important;
+}
+.header>.navbar a:hover{
+    color: rgb(4, 92, 255) !important;
+}
+.header>.navbar li a{
+    font-size: var(--h2-font-size);
+    color: #696969 !important;
+}
+.header>.navbar li a:hover{
+    color: rgb(2, 19, 253) !important;
+}
+.footer {
+    background-image: url("/asset/img/bg_header1.jpg");
+}
+/*==================== HOME ====================*/
+.pos-container> p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #696969;
+}
+
+
+#text {
+    font-weight: bold;
+    font-size: 30px;
+    color: #696969;
+    text-align: center;
+}
+#button {
+    text-align: center;
+}
+.chu-thich {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #696969;
+}
+.search{
+    margin: 0 0 0 0;
+    text-align: center;
+}
+.search>.label{
+    font-weight: bold;
+    font-size: 25px;
+    color: #696969;
+}
+
+.grid-pos{
+    display: grid;
+    grid-gap: 50px 100px;
+}
+#container1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+#container2 {
+    /* margin-top: 5rem; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+
+ul{
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+
+
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* padding: 0; */
+    width: 100%;
+}
+
+.table-bordered {
+    margin-left: 2em;
+}
+.square {
+    -webkit-text-stroke-width: 0.03em;
+    -webkit-text-stroke-color: black;
+    align-content: center;
+    align-items: center;
+    color: white;
+    display: flex;
+    font-size: 1em;
+    font-weight: 700;
+    height: 2em;
+    justify-content: center;
+    width: 3em;
+    /* margin-top: 1rem; */
+    margin-right: 0.5rem;
+}
+
+.object_chu_thich {
+    -webkit-text-stroke-width: 0.03em;
+    -webkit-text-stroke-color: black;
+    align-content: center;
+    align-items: center;
+    color: white;
+    display: flex;
+    margin-left: 2.5em;
+    font-size: 1em;
+    font-weight: 700;
+    height: 1em;
+    justify-content: center;
+    width: 1.5em;
+    /* margin-top: 1rem; */
+    margin-right: 0.5rem;
+}
+
+.description_chu_thich {
+    font-size: large;
+    font-weight: 400;
+}
+.robot {
+    width: 3em;
+    height: 2em;
+    border: 0.5em solid gray;
+    background-color: #bb0000;
+    margin-right: 0.5rem;
+}
+.square:hover {
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+.square span {
+    display: none;
+}
+
+.square:hover span {
+    display: block;
+}
+.redItem{
+    box-sizing: border-box;
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(201, 243, 233);
+}
+/*==================== FOOTER ====================*/
+.light-100 {
+	border-top: 1px solid #d5d5d5;
+	width: 100%;
+}
+.social a {
+	font-size: 2em;/*1em = 16px*/
+	padding: 3rem;/*1rem = 1 "font-size" */
+}
+.fa-facebook {
+	color: #404247;
+}
+
+.fa-instagram {
+	color: #517fa4;
+}
+.fa-youtube {
+	color: #bb0000;
+}
+footer {
+	padding: 10px;
+	background-color: var(--first-color);
+	color: #fafafa;
+	opacity: 0.9;
+}
+ /*==================== LOGIN ====================*/  
+.success{
+    font-size: 18px;
+    margin-top: 5px;
+    margin-left: 10px;
+    color: seagreen;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/*==================== CONTACT ====================*/
+#text-contact {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    font: bold;
+}
+/*========== POP UP ==========*/
+.center {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+.popup {
+  width: 500px;;
+  height: 500px;;
+  padding:30px 20px;
+  background:linear-gradient(120deg,#037ADE,#03E5B7);
+  border-radius:10px;
+  box-sizing:border-box;
+  z-index:2;
+  text-align:center;
+  opacity:0;
+  top:-200%;
+  transform:translate(-50%,-50%) scale(0.5);
+  transition: opacity 300ms ease-in-out,
+              top 1000ms ease-in-out,
+              transform 1000ms ease-in-out;
+}
+.admin-container{
+    margin:5px 0px;
+    padding:0 0 0 0;
+}
+.popup.active {
+  opacity:1;
+  top:50%;
+  transform:translate(-50%,-50%) scale(1);
+  transition: transform 300ms cubic-bezier(0.18,0.89,0.43,1.19);
+}
+.popup .popup-title {
+  color: #FFF;
+  margin:5px 0px;
+  font-size:30px;
+  font-weight:600;
+}
+.popup .popup-description{
+  color:#222;
+  font-size:15px;
+  padding:5px;
+}
+.admin_title{
+    margin-top: 5px;
+    color: #FFF;
+    font-size:15px;
+}
+.icon_social:hover{
+    color: rgb(177, 176, 176);
+}
+.icon_social{
+    display: inline-flex;
+    text-align: center;
+    color: #FFF;
+    font-size: 1.25rem;
+    margin-left: var(--mb-0-5);
+    margin-right: var(--mb-0-5);
+}
+.popup .ok-btn {
+  margin-top:15px;
+}
+.popup .ok-btn button {
+  padding:10px 20px;
+  background: linear-gradient(45deg,#6ca5d4,#80e7d3);
+  color:#f5f5f5;
+  border:2px solid #111;
+  font-size:16px;
+  font-weight:600;
+  outline:none;
+  border-radius:10px;
+  cursor:pointer;
+  transition: all 300ms ease-in-out;
+}
+.popup .ok-btn button:hover {
+  color:#111;
+  background:#f5f5f5;
+}
+.popup > div {
+  position:relative;
+  top:10px;
+  opacity:0;
+}
+.popup.active > div {
+  top:0px;
+  opacity:1;
+}
+.popup.active .popup-title {
+  transition: all 300ms ease-in-out 300ms;
+}
+.popup.active .popup-description {
+  transition: all 300ms ease-in-out 350ms;
+}
+.popup.active .ok-btn {
+  transition: all 300ms ease-in-out 400ms;
+}
+/*========== SCROLL BAR ==========*/
+::-webkit-scrollbar{
+    width: .60rem;
+    background-color: var(--scroll-bar-color);
+    border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-thumb-color);
+    border-radius: .5rem;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: var(--text-color-light);
+}

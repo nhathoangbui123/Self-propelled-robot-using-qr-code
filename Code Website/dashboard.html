@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--==================== UNICONS ====================-->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+        <!--==================== CSS ====================-->
+        <link rel="stylesheet" href="asset/css/style.css">
+        <!--==================== Boostrap ====================-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <!--==================== Firebase ====================-->   
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+        <!--==================== TITLE AND ICON ====================-->
+        <title>AGV ROBOT</title>
+        <link rel="icon" href="asset/img/icon.ico" type="icon/image type">
+    </head>
+
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+            <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+                <div class="container-fluid">
+                    <a class="navbar-branch" href="index.html">
+                        <img src="asset/img/icon.jpg" class="header-icon">
+                        AGV ROBOT
+                    </a>
+                    <div style="margin-left: 30px;margin-bottom: 5px;">
+                        <span id="user" class="message">Hello, <email-id>
+                                </Email-id></span>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarResponsive">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id ="popup"href="#contact">Contact</a>
+                            </li> 
+                            <div class="success">
+                                <button class="btn btn-danger" onclick="logout()">Logout</button>
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <hr class="light-100">
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== POP UP CONTACT US ====================-->
+            <div class="popup center">
+                <div class="popup-title">
+                Contact Us
+                </div>
+                <!-- <div class="popup-description">
+                </div> -->
+                <ul class="admin-container ">
+                    <div>
+                        <img src="asset/img/do.jpg" style="border-radius:50%;" width="100px" height="100px">
+                        <li class="admin">
+                            <li>
+                                <span class="admin_title">Uông Trần Trung Độ</span>
+                            </li>
+                            <li>
+                                <a class="icon_social" href="https://www.facebook.com/trungdo18122000">
+                                    <i class="uil uil-facebook"></i>
+                                </a>
+                                <a class="icon_social" href="https://www.instagram.com/trungdo18122000/">
+                                    <i class="uil uil-instagram"></i>
+                                </a>
+                                <a class="icon_social" href="https://github.com/dokun1812">
+                                    <i class="uil uil-github"></i>
+                                </a>
+                                <a class="icon_social" href="tel:0399.846.623">
+                                    <i class="uil uil-phone"></i>
+                                </a>
+                            </li>
+                        </li>
+                    </div>
+                    <div>
+                        <img src="asset/img/hoang.jpg" style="border-radius:50%;margin-top: 10px;" width="100px" height="100px">
+                        <li class="admin">
+                            <li>
+                                <span class="admin_title">Bùi Nguyễn Nhật Hoàng</span>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/profile.php?id=100006989110404" class="icon_social">
+                                    <i class="uil uil-facebook "></i>
+                                </a>
+                                <a  href="https://www.instagram.com/nhathoangbui123/" class="icon_social">
+                                    <i class="uil uil-instagram"></i>
+                                </a>
+                                <a href="https://github.com/nhathoangbui123"class="icon_social" >
+                                    <i class="uil uil-github"></i>
+                                </a>
+                                <a href="tel:0797.818.548"class="icon_social">
+                                    <i class="uil uil-phone"></i>
+                                </a>
+                            </li>
+                        </li>
+                    </div>
+                </ul>
+                <div class="ok-btn button--flex">
+                <button id="ok-btn">
+                    OK
+                </button>
+                </div>
+            </div>
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+                <div class="container__home">
+                    <!--==================== SEARCH ====================-->
+                    <div class="search">
+                        <label class="label" for="find" id = "text" >ITEMS</label>
+                        <form class="form-inline">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <!-- <input type="text"> -->
+                                    <label class="label" for="x" id="text">Axis X</label>
+                                    <input type="text" name="x" class="form-control" id="input_x">
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="label" for="y" id="text">Axis Y</label>
+                                    <input type="text" name="y" class="form-control" id="input_y">
+                                </div>
+                            </div>
+                        </form>
+                        <button class="button button--flex" id="button-home">Home</button>
+                        <button class="button button--flex" id="button">Start</button>
+                        <button class="button button--flex" id="button-stop">Stop</button>
+                    </div>
+                    <hr class="light-100">
+                    <!--==================== DESCRIPTION ====================-->
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="chu-thich">
+                                <table class="table table-bordered">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>
+                                                <p>Object</p> 
+                                            </th>
+                                            <th>
+                                                <p>Description</p>  
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <li class="object_chu_thich" style="background-color: black;"></li>
+                                            </td>
+                                            <td class="description_chu_thich">Workstation</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <li class="object_chu_thich" style="border:0.25em solid black; background-color:green;" </li>
+                                            </td>
+                                            <td class="description_chu_thich">Position Robot On Workstation</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>
+                                                <li class="object_chu_thich" style="background-color:gray;"></li>
+                                            </td>
+                                            <td class="description_chu_thich">Way</td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td>
+                                                <li class="object_chu_thich"
+                                                    style="border:0.25em solid gray; background-color:green; " </li>
+                                            </td>
+                                            <td class="description_chu_thich">Position Robot On Way</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <li class="object_chu_thich" style="background-color: red;"></li>
+                                            </td>
+                                            <td class="description_chu_thich">Shelves</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <li class="object_chu_thich"
+                                                    style="border:0.25em solid red; background-color:green; " </li>
+                                            </td>
+                                            <td class="description_chu_thich">Position Robot On Shelves</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <li class="object_chu_thich"
+                                                    style="border:0.25em solid yellow; background-color: gray; " </li>
+                                            </td>
+                                            <td class="description_chu_thich">Position user choice</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--==================== ROBOT POSITION ====================-->
+                        <div class="col-sm-8">
+                            <div class="pos-container">
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <tr>
+                                            <th>
+                                                <p class="chu-thich">ROBOT POSITION</p>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="grid-pos">
+                                                    <div id='container1'></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <hr class="light-100">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer">
+            <div class="container-fluid padding">
+                <div class="row text-center padding">
+                    <div class="col-12">
+                        <h2 style="color: black;">Contact</h2>
+                    </div>
+                    <div class="col-12 social padding">
+                        <a href="https://www.facebook.com/profile.php?id=100006989110404">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/nhathoangbui123/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCSM_hC2jWx32yta7BZ7BGKw">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid padding">
+                <div class="row text-center">
+                    <div class="col">
+                        <p id="text-contact" style="color: black;">nhathoangbui123@gmail.com</p>
+                        <p id="text-contact" style="color: black;">dokun1812@gmail.com</p>
+                        <p id="text-contact" style="color: black;">HCMUTE</p>
+                    </div>
+                    <div class="col-12">
+                        <h5 style="color: black;">&copy; AGV ROBOT</h5>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--==================== MAIN JS ====================-->
+        <script src="asset/js/main.js"></script>
+        <script src="asset/js/firebase.js"></script>
+    </body>
+</html>
